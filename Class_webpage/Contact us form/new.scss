@@ -1,0 +1,30 @@
+$speed: 10s;
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  
+  &:hover &__item { animation-play-state: paused; }
+  
+  &__seperator { margin: 0 2rem; }
+  
+  &__item {
+    display: inline-block;
+    will-change: transform;
+    animation: marquee $speed linear infinite;
+  }
+}
+
+@keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+
+// Styling
+.marquee {
+  background-color: tomato;
+  padding: 1rem 0;
+  color: #fff;
+}
